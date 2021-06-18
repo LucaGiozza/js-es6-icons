@@ -28,3 +28,17 @@
     background-color: white;
     color:black;
 }
+
+main{
+    width:100vw;
+    background-color: lightgrey;
+    
+}
+.rettangolo{
+    background-color: white;
+    height: 130px;
+    width:15%;
+    display:inline-block;
+    margin-left:4%;
+    margin-top: 2%;
+}
