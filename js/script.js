@@ -98,22 +98,31 @@ const icons = [
   ];
 
 
-//   Partendo dalla seguente struttura dati , 
+//   Partendo dalla struttura dati , 
 //   mostriamo in pagina tutte le icone disponibili come da layout.
 
 
-icons.forEach(function(element){
+
+print(icons);
+
+function print(array){
 
 
+icons.forEach((element) => {
+  const{name, prefix, type, family} = element;
+  const elementHTML = `
+  <div>
+                  <i   class="${family} ${prefix}${name} "></i>
+                  <p>${name.toUpperCase()}</p>
+              </div> 
+  
+              `;
+
+              document.getElementById('animali').innerHTML += elementHTML;
 });
 
 
-document.getElementById('animali').innerHTML += 
-`
-<div class="contenitore">
-                <i  id="icone" class="fas fa-cat"></i>
-                <p>cat</p>
-            </div> 
+}
 
-`
+
 
