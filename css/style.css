@@ -41,4 +41,11 @@ main{
     display:inline-block;
     margin-left:4%;
     margin-top: 2%;
+    text-align: center;
+    
 }
+.contenitore{
+    margin-top: 20%;
+}
+#icone{
+    font-size: 35px;
