@@ -97,14 +97,72 @@ const icons = [
     },
   ];
 
-// milestone 1
+// milestone 1-2-3
 
-  print(icons);
-
-
+  
 
 
-  const coloredArray = icons.map((element) => {
+  
+
+  const arrayColorato = colorIcons(icons);
+  stampa(arrayColorato);
+
+  const types = [];
+
+  arrayColorato.forEach((element) =>{
+    if(!types.includes(element.type)){
+
+      types.push(element.type);
+
+      document.getElementById('type').innerHTML += 
+      
+      `
+      <option value="${element.type}">${element.type}</option>
+      `
+    }
+     
+
+  });
+
+
+
+
+// metto tutto in una funzione
+function stampa(array){
+
+
+  // utilizzo il forEach
+ array.forEach((element) =>{
+ console.log(element);
+
+
+
+//  qui faccio si che le icone si vedano nell'html e che per ogni rettangolino cambi icona
+ const {color,family, nome, prefix} = element;
+ const elementHtml =  `
+ <div id="icons" class="rettangolo">
+ <div  class="contenitore">
+     <i  id="icone" class=" ${family} ${prefix}${nome}" style="color:${color}"></i>
+     <p>${nome.toUpperCase()}</p> 
+  </div> 
+  </div> 
+ `;
+
+ document.getElementById('icons').innerHTML += elementHtml ;
+
+ });
+
+}
+
+
+
+// creo una costante per i colori
+
+
+
+
+function colorIcons(array){
+  const arrayColorato = array.map((element) => {
 
     let color = 'red';
     if(element.type == 'animal'){
@@ -120,32 +178,10 @@ const icons = [
    }
   });
 
-  console.log(coloredArray);
-
-// metto tutto in una funzione
-function print(array){
-
-
-  // utilizzo il forEach
- array.forEach((element) =>{
- console.log(element);
+  return arrayColorato;
 
 
 
-//  qui faccio si che le icone si vedano nell'html e che per ogni rettangolino cambi icona
- const {color,family, nome, prefix} = element;
- const elementHtml =  `
- <div id="icons" class="rettangolo">
- <div  class="contenitore">
-     <i  id="icone" class=" ${family} ${prefix}${nome}"></i>
-     <p>${nome.toUpperCase()}</p> 
-  </div> 
-  </div> 
- `;
-
- document.getElementById('icons').innerHTML += elementHtml ;
-
- });
 
 }
 
