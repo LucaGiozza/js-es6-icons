@@ -124,11 +124,41 @@ const icons = [
 
   });
 
+//  filtro in base alla scelta dell'utente
+  const filtro = document.getElementById('type');
+
+
+
+
+  filtro.addEventListener("change", function(){
+
+    const valoreFiltro = filtro.value;
+
+  
+   
+     const elementoFiltrato = arrayColorato.filter((element) =>{
+
+      return element.type == valoreFiltro;
+
+      
+     });
+
+     stampa(elementoFiltrato);
+     if(valoreFiltro == 'All'){
+      stampa(arrayColorato);
+      }
+
+  });
+
 
 
 
 // metto tutto in una funzione
 function stampa(array){
+
+  // svuoto l'array prima di andare a riempirlo di nuovo
+
+  document.getElementById('icons').innerHTML = '';
 
 
   // utilizzo il forEach
