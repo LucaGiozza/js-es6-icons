@@ -101,6 +101,27 @@ const icons = [
 
   print(icons);
 
+
+
+
+  const coloredArray = icons.map((element) => {
+
+    let color = 'red';
+    if(element.type == 'animal'){
+        color = 'blue';
+    }else if(element.type == 'vegetable'){
+      color = 'green';
+
+    }
+
+   return {
+     ...element,
+     color
+   }
+  });
+
+  console.log(coloredArray);
+
 // metto tutto in una funzione
 function print(array){
 
@@ -112,7 +133,7 @@ function print(array){
 
 
 //  qui faccio si che le icone si vedano nell'html e che per ogni rettangolino cambi icona
- const {nome, prefix, family} = element;
+ const {color,family, nome, prefix} = element;
  const elementHtml =  `
  <div id="icons" class="rettangolo">
  <div  class="contenitore">
