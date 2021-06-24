@@ -107,11 +107,13 @@ icons.forEach((element) =>{
 console.log(element);
 
 
-const {nome, prefix, type, family} = element;
+const {nome, prefix, family} = element;
 const elementHtml =  `
+<div id="icons" class="rettangolo">
 <div  class="contenitore">
-    <i  id="icone" class="fas fa-cat"></i>
-    <p>Cat</p> 
+    <i  id="icone" class=" ${family} ${prefix}${nome}"></i>
+    <p>${nome.toUpperCase()}</p> 
+ </div> 
  </div> 
 `;
 
