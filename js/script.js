@@ -97,29 +97,39 @@ const icons = [
     },
   ];
 
+// milestone 1
+
+  print(icons);
+
+// metto tutto in una funzione
+function print(array){
+
+
+  // utilizzo il forEach
+ array.forEach((element) =>{
+ console.log(element);
 
 
 
+//  qui faccio si che le icone si vedano nell'html e che per ogni rettangolino cambi icona
+ const {nome, prefix, family} = element;
+ const elementHtml =  `
+ <div id="icons" class="rettangolo">
+ <div  class="contenitore">
+     <i  id="icone" class=" ${family} ${prefix}${nome}"></i>
+     <p>${nome.toUpperCase()}</p> 
+  </div> 
+  </div> 
+ `;
+
+ document.getElementById('icons').innerHTML += elementHtml ;
+
+ });
+
+}
 
 
 
-icons.forEach((element) =>{
-console.log(element);
-
-
-const {nome, prefix, family} = element;
-const elementHtml =  `
-<div id="icons" class="rettangolo">
-<div  class="contenitore">
-    <i  id="icone" class=" ${family} ${prefix}${nome}"></i>
-    <p>${nome.toUpperCase()}</p> 
- </div> 
- </div> 
-`;
-
-document.getElementById('icons').innerHTML += elementHtml ;
-
-});
 
 
 
